@@ -10,6 +10,10 @@
     color: var(--dark-navy);
 }
 
+.vermellion{
+    color: var(--vermellion);
+}
+
 *{
     box-sizing: border-box;
 }
@@ -46,17 +50,112 @@ body{
     line-height: 150%;
 }
 
-.body-samll-text{
+.body-small-text{
     font-size: 0.75rem;
     font-weight: 700;
     line-height: 150%;
+}
+
+main{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 4rem;
+    background-color: white;
+    border-radius: 36px;
+}
+
+.banner{
+    margin-left: 4rem;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.625rem;
+}
+
+li div{
+    display: flex;
+    column-gap: 1rem;
+    align-items: start;
+}
+
+
+
+.subscription{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+
+.email-field{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+.email-feild-text{
+    display: flex;
+    justify-content: space-between;
+}
+
+.email-input{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    border-radius: 8px;
+    border: var(--gray-25) 1px solid;
+    color: var(--dark-navy);
+    font-weight: 400;
+    font-family: "Roboto Flex", sans-serif;
+    line-height: 150%;
+    cursor: pointer;
+}
+
+.email-input::placeholder{
+    color: var(--dark-navy);
+    opacity: 0.5;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.email-input:focus{
+    border: var(--dark-navy) 1px solid;
+    outline: none;
+}
+
+.email-input.error{
+    color: var(--vermellion);
+    background-color: rgba(255,97,85,0.15);
+    border: var(--vermellion) 1px solid
 }
 
 .message{
     border-radius: 36px;
     background-color: white;
     box-shadow: 0px 15px 60px rgba(0,0,0,0.25);
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;    
     justify-content: center;
     row-gap: 2.5rem;
@@ -71,7 +170,7 @@ body{
     max-width: 376px;
 }
 
-.description{
+.message-description{
     display: grid;
     row-gap: 1.5rem;
 }
@@ -97,11 +196,41 @@ body{
     margin-bottom: 2.5rem;
 }
 
-.title{
-    color: var(--dark-navy);
-}
+@media screen  and (max-width:768px) {
+    body{
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
 
-@media screen  and (max-width:375px) {
+    main{
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.5rem;
+        background-color: white;
+        padding: 0;
+    }
+
+    .banner{
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .content{
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .description .heading-text{
+        font-size: 2.5rem;
+    }
+
     .message{
         border-radius: 0px;
         height: 100vh;
