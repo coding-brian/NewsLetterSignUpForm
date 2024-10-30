@@ -25,7 +25,15 @@ function back(){
     emailInput.value=""
 }
 
+function keydown(event){
+    if(event.key==="Enter"){
+        submit()
+    }
+}
+
 function submit(){
+
+    
     if(!isEmail(email.value)){
         errorMessage.innerText ='Valid email required'
         emailInput.classList.add('error')
@@ -46,5 +54,6 @@ document.addEventListener('DOMContentLoaded',function(){
 })
 
 document.body.querySelector('#subscription-button').addEventListener('click',submit)
+document.body.querySelector('.email-input').addEventListener('keydown',keydown)
 document.body.querySelector('.email-input').addEventListener('focus',clear)
 document.body.querySelector('#dismiss-button').addEventListener('click',back)
